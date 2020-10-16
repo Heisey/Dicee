@@ -9,12 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var dieImages = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
 
+    @IBOutlet weak var dieImageViewOne: UIImageView!
+    
+    @IBOutlet weak var dieImageViewTwo: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        
+        
+        dieImageViewOne.image = dieImages[2]
+    }
 }
 
