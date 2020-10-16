@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var dieImages = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+    let dieImages = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
 
     @IBOutlet weak var dieImageViewOne: UIImageView!
     
@@ -18,8 +18,8 @@ class ViewController: UIViewController {
 
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        let randomNumberOne = Int.random(in: 0...dieImages.count - 1)
-        let randomNumberTwo = Int.random(in: 0...dieImages.count - 1)
+        let randomNumberOne = Int.random(in: 0..<dieImages.count)
+        let randomNumberTwo = Int.random(in: 0..<dieImages.count)
         
         dieImageViewOne.image = dieImages[randomNumberOne]
         dieImageViewTwo.image = dieImages[randomNumberTwo]
