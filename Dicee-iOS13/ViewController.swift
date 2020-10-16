@@ -15,17 +15,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var dieImageViewOne: UIImageView!
     
     @IBOutlet weak var dieImageViewTwo: UIImageView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
+        let randomNumberOne = Int.random(in: 0...dieImages.count - 1)
+        let randomNumberTwo = Int.random(in: 0...dieImages.count - 1)
         
-        
-        dieImageViewOne.image = dieImages[2]
+        dieImageViewOne.image = dieImages[randomNumberOne]
+        dieImageViewTwo.image = dieImages[randomNumberTwo]
     }
 }
 
